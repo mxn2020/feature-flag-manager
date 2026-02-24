@@ -1,69 +1,94 @@
 # Feature Flag Manager
 
-## Pages & Features
+Manage feature flags and toggles for gradual rollouts.
 
-### 1. Dashboard
-- Total flags count (active, inactive, stale)
-- Recent flag changes feed
-- Flags nearing expiry / cleanup
-- Environment overview (production, staging, dev)
-- Quick toggle shortcuts
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
 
-### 2. Flags
-- Flag list with search, environment, status, tag filters
-- Create flag (key, name, description, type: boolean/string/number/JSON)
-- Flag detail: status per environment, targeting rules, history
-- Toggle flag on/off per environment
-- Archive / delete flags
-- Flag lifecycle (created → active → stale → archived)
+## Tech Stack
 
-### 3. Targeting Rules
-- User segment targeting (by user ID, email, attribute)
-- Percentage rollout (0–100%)
-- Rule builder (IF attribute = value THEN serve variant)
-- Default & fallback values
-- Priority ordering of rules
-- Test rules with user preview
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
 
-### 4. Environments
-- Environment management (production, staging, dev, custom)
-- Per-environment flag state
-- Promote flag config between environments
-- Environment-specific API keys
+## Getting Started
 
-### 5. Segments
-- Define user segments (beta users, internal, enterprise, etc.)
-- Segment rules (attribute-based membership)
-- Reuse segments across flags
-- Segment member preview
+```bash
+npm install
+cp .env.example .env.local
+# Set VITE_CONVEX_URL to your deployment URL
+npm run dev
+```
 
-### 6. Audit Log
-- Complete history of flag changes (who, what, when)
-- Filter by flag, user, action, date
-- Diff view of configuration changes
-- Export audit log
+## License
 
-### 7. Experiments (A/B Testing)
-- Create experiment linked to flag variants
-- Define metrics to track (conversion, engagement)
-- Experiment results with statistical significance
-- Declare winner & roll out
+MIT © Mehdi Nabhani
 
-### 8. SDKs & Integration
-- SDK installation guides (JS, React, Node, Python, etc.)
-- API key management
-- Code snippets for each flag
-- Webhook configuration for flag changes
+---
 
-### 9. Reports
-- Flag usage across environments
-- Stale flag identification
-- Rollout history & impact
-- Experiment results summary
+<details>
+<summary>📋 Original Feature Spec</summary>
 
-### 10. Settings
-- Organization profile
-- Team members & roles (admin, developer, viewer)
-- Approval workflows for production changes
-- Default flag settings
-- Notification preferences
+# {{APP_TITLE}}
+
+{{APP_DESCRIPTION}}
+
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- A running [shared Convex backend](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env.local with your Convex URL
+cp .env.example .env.local
+# Edit .env.local and set VITE_CONVEX_URL to your deployment URL
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run typecheck` | Run TypeScript type checking |
+
+## Project Structure
+
+```
+src/
+  main.tsx              # Entry point with ConvexAuthProvider
+  App.tsx               # Auth routing (Landing vs Dashboard)
+  App.css               # Component styles
+  index.css             # Global styles & design tokens
+  components/
+    Landing.tsx          # Marketing/landing page
+    SignIn.tsx           # Auth form (sign-in/sign-up)
+    Dashboard.tsx        # Authenticated app shell
+api.ts                   # Convex API types (from shared backend)
+```
+
+## License
+
+MIT © Mehdi Nabhani
+
+</details>
