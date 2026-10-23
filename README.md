@@ -21,7 +21,7 @@ npm run dev
 
 ## License
 
-MIT © Mehdi Nabhani
+MIT © AVS Media
 
 ---
 
@@ -89,7 +89,7 @@ api.ts                   # Convex API types (from shared backend)
 
 ## License
 
-MIT © Mehdi Nabhani
+MIT © AVS Media
 
 </details>
 
