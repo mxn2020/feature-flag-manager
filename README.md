@@ -21,7 +21,7 @@ npm run dev
 
 ## License
 
-MIT © AVS Media
+Apache-2.0 © AVS Media
 
 ---
 
@@ -89,7 +89,7 @@ api.ts                   # Convex API types (from shared backend)
 
 ## License
 
-MIT © AVS Media
+Apache-2.0 © AVS Media
 
 </details>
 
